@@ -16,12 +16,13 @@ export default function QueryProcessor(query: string): string {
       "Derek"
     );
   }
-  else if (query.toLowerCase().includes("plus") {
+  else if (query.toLowerCase().includes("plus")) {
     const arr = query.split(" ");
     const num1 = parseInt(arr[2]);
     const num2 = parseInt(arr[4].substring(0, arr[4].length-1));
+    const sum = num1 + num2;
     return (
-      num1 + num2
+      sum.toString()
     );
   }
   return "";
