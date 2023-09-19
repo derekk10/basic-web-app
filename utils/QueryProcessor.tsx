@@ -11,9 +11,15 @@ export default function QueryProcessor(query: string): string {
     "Your AndrewID is Derekk."
     );
   }
-  if (query.toLowerCase().includes("name")) {
+  else if (query.toLowerCase().includes("name")) {
     return (
       "Derek"
+    );
+  }
+  else if (query.toLowerCase().includes("plus") {
+    const arr = query.split(" ");
+    return (
+      arr[2] + arr[4]
     );
   }
   return "";
