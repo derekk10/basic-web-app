@@ -18,8 +18,10 @@ export default function QueryProcessor(query: string): string {
   }
   else if (query.toLowerCase().includes("plus") {
     const arr = query.split(" ");
+    const num1 = parseInt(arr[2]);
+    const num2 = parseInt(arr[4].substring(0, arr[4].length-1));
     return (
-      arr[2] + arr[4]
+      num1 + num2
     );
   }
   return "";
