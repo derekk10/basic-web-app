@@ -6,7 +6,7 @@ export default function QueryProcessor(query: string): string {
       "writer in the English language and the world's pre-eminent dramatist."
     );
   }
-  if (query.toLowerCase().includes("andrew id")) {
+  else if (query.toLowerCase().includes("andrew id")) {
     return (
     "Your AndrewID is Derekk."
     );
@@ -20,9 +20,20 @@ export default function QueryProcessor(query: string): string {
     const arr = query.split(" ");
     const num1 = parseInt(arr[2]);
     const num2 = parseInt(arr[4].substring(0, arr[4].length-1));
-    const sum = num1 + num2;
+    var sum = num1 + num2;
     return (
       sum.toString()
+    );
+  }
+  else if (query.toLowerCase().includes("which of the following numbers is the largest:")) {
+    const arr = query.split(" ");
+    const nums = arr.slice(-3);
+    let ans = -1
+    nums.forEach(num => {
+      ans = Math.max(ans, parseInt(num.substring(0, num.length-1)))
+    });
+    return (
+      ans.toString()
     );
   }
   return "";
